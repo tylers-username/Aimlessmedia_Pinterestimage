@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Aimlessmedia_Pinterestimage>
+            <version>0.2.0</version>
+        </Aimlessmedia_Pinterestimage>
+    </modules>
+    <global>
+        <!-- Create Pinterest image attribute using resources-->
+        <resources>
+            <aimlessmedia_pinterestimage_setup>
+                <setup>
+                    <module>Aimlessmedia_Pinterestimage</module>
+                </setup>
+            </aimlessmedia_pinterestimage_setup>
+        </resources>
+        <blocks>
+            <modulename>
+                <class>Aimlessmedia_Pinterestimage_Block</class>
+            </modulename>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product_helper_form_gallery_content>Aimlessmedia_Pinterestimage_Block_Catalog_Product_Helper_Form_Gallery_Content</catalog_product_helper_form_gallery_content>
+                    <catalog_product_grid>Aimlessmedia_Pinterestimage_Block_Catalog_Product_Grid</catalog_product_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <models>
+            <aimlessmedia_pinterestimage>
+                <class>
+                    Aimlessmedia_Pinterestimage_Model
+                </class>
+            </aimlessmedia_pinterestimage>
+        </models>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <aimlessmedia_pinterestimage>
+                    <file>aimlessmedia_pinterestimage.xml</file>
+                </aimlessmedia_pinterestimage>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Aimlessmedia_Pinterestimage before="Mage_Adminhtml">Aimlessmedia_Pinterestimage_Adminhtml</Aimlessmedia_Pinterestimage>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

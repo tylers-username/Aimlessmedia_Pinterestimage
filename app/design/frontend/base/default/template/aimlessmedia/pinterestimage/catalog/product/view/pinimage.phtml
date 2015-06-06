@@ -1,0 +1,41 @@
+<?php
+$_product = $this->getProduct();
+$_helper = $this->helper('catalog/output');
+
+try {
+    $product_img = $this->helper('catalog/image')->init($_product, 'pinterest_image');
+}
+catch (Exception $e) {
+    Mage::log('Image '.$e->getMessage(), null, 'image_exception.log');
+}
+
+if($e){
+    //Pinterest image was not found, try using base image
+    try {
+        $product_img = $this->helper('catalog/image')->init($_product, 'image');
+    }
+    catch (Exception $err_image) {
+        Mage::log('Image '.$e->getMessage(), null, 'image_exception.log');
+    }
+    if(!$err_image){
+        $pinImgSrc=$this->helper('catalog/image')->init($_product, 'image')->constrainOnly(true)->keepAspectRatio(true)->keepFrame(false)->setQuality(100)->resize(700, 3150);
+        echo $_img = "<meta property='og:image' content='$pinImgSrc' />";
+/*        <img style="display:none;"
+        data-pin-url="'.$_product->getProductUrl().'"
+		data-pin-media="'.$pinImgSrc.'"
+		src="'.$pinImgSrc.'"
+		alt="'.$this->htmlEscape($this->getImageLabel()).'"
+		title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        echo $_helper->productAttribute($_product, $_img, 'image'); */
+    }
+}else{
+    $pinImgSrc=$this->helper('catalog/image')->init($_product, 'pinterest_image')->constrainOnly(true)->keepAspectRatio(true)->keepFrame(false)->setQuality(100)->resize(700, 3150);
+    echo $_img = "<meta property='og:image' content='$pinImgSrc' />";
+/*    $_img = '<img style="display:none;"
+        data-pin-url="'.$_product->getProductUrl().'"
+		data-pin-media="'.$pinImgSrc.'"
+		src="'.$pinImgSrc.'"
+		alt="'.$this->htmlEscape($this->getImageLabel()).'"
+		title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+    echo $_helper->productAttribute($_product, $_img, 'pinterest_image');*/
+}
