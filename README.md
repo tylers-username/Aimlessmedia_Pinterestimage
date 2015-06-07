@@ -5,11 +5,11 @@ Please feel free to contirbute and grow this project!
 
 Forgive me for the vague details. I am trying to give a basic rundown without a lot of time to do so. I will add a description and details of this project when I have a moment. Simply, the purpose of this Magento module is to generate Pinterest images that are vertically tall and contain product details. Currently the details of the image are fairly static and use custom product attributes that are unique to my Magento Store. The next step is to make the product details within the image and the background of the image more dynamic.
 
-Current output if attribute codes garnish, ingredients and method:
+Current output if attribute codes garnish, ingredients and method exists:
 
  - http://i.imgur.com/lSbs1LH.png
  
-If the attributes do not exist then they are not included in the image.
+If the attributes do not exist then they are not included in the generated image.
 
 ### How the extension works
 You can see below that a Pinterest Product attribute is added as well as a generate button.
