@@ -15,10 +15,10 @@ If the attributes do not exist then they are not included in the generated image
 You can see below that a Pinterest Product attribute is added as well as a generate button.
  - http://i.imgur.com/cZChekX.png
  
-Once the image is generated, it is automatically excluded from the photo gallery but is set to be the <meta og:image/> which tells Pinterest to use this image when shared.
+Once the image is generated, it is automatically excluded from the photo gallery but is set to be the \<meta og:image/> which tells Pinterest to use this image when shared.
  - http://i.imgur.com/VSaPuEo.png
 
-If you do not want to use a generate image as the default pinterest image simply select another one of the images that you have uploaded.
+If you do not want to use a generated image simply select another one of the images that you have uploaded.
 
 Bulk Pinterest Image Generating
  - http://i.imgur.com/vCeQuaa.png
