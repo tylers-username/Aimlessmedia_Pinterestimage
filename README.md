@@ -1,4 +1,4 @@
-#Magento  interest Image Generator for Products
+#Magento  Pinterest Image Generator for Products
 ## Aimlessmedia_Pinterestimage
 
 Please feel free to contirbute and grow this project!
